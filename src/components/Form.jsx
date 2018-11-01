@@ -31,7 +31,10 @@ export default class Form extends Component {
 
     // axios post request
     axios
-      .post("/api/users/1/stressdata", newUserdata)
+      .post(
+        "https://beautiful-data.herokuapp.com/api/users/1/stressdata",
+        newUserdata
+      )
       .then(res => console.log(res.data))
       .catch(err => console.log(err));
     window.location.reload();
@@ -61,7 +64,7 @@ export default class Form extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-6 m-auto">
-              <h1 className="text-center pt-3">Self Assessment Report</h1>
+              <h2 className="text-center pt-3">Self Assessment Report</h2>
               <form onSubmit={this.onSubmit}>
                 <div className="form-group">
                   <label className="text-left">Emotion</label>
