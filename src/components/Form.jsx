@@ -32,12 +32,14 @@ export default class Form extends Component {
     // axios post request
     axios
       .post(
-        "https://beautiful-data.herokuapp.com/api/users/1/stressdata",
+        "http://beautiful-data.herokuapp.com/api/users/1/stressdata",
         newUserdata
       )
-      .then(res => console.log(res.data))
+      .then(res => {
+        console.log(res.data);
+        window.location.reload();
+      })
       .catch(err => console.log(err));
-    window.location.reload();
   }
 
   render() {
